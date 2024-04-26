@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   
+    <title>AUTH</title>
+</head>
+<body style="background-color: cadetblue; display: flex; justify-content: center; align-items: center; height: 95vh">
+<style>
+    body {
+        background-image: url("{% static 'photo4.jpg' %}");
+        background-color: khaki;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .mycontainer {
+        background-color: lemonchiffon;
+        border-radius: 35px;
+        height: 400px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .mycontainer input {
+        width: 250px;
+        height: 50px;
+        padding: 1rem;
+        border-radius: 15px;
+        margin-bottom: 10px;
+    }
+    h3 {
+        margin-bottom: 60px;
+        margin-left: 40px;
+    }
+</style>
+<div class="mycontainer">
+<form action="" method="post" id="form">
+    <h3>Авторизация</h3>
+     <input name="email" placeholder="Введите Email"><br>
+     <input name="password" placeholder="Введите пароль"><br>
+    <button id='send' class="btn btn-success">Войти</button>
+</form>
+    </div>
+<h1 style="color: red">{{ msg }}</h1>
+<script>
+    let inputs = document.getElementsByTagName('input')
+    form.onsubmit = (e) => {
+        if (inputs[0].value.replaceAll(' ', '') === '' || inputs[1].value.replaceAll(' ', '') === '') {
+            e.preventDefault()
+            alert('Есть пустые поля!')
+            return
+        }
+    }
+</script>
+</body>
+</html>
